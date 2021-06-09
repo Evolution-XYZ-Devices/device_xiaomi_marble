@@ -66,6 +66,11 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+    #Disable UFS auto_hibern8
+    write /sys/bus/platform/devices/1d84000.ufshc/auto_hibern8 0
+    #Disable UFS clock gating
+    write /sys/bus/platform/devices/1d84000.ufshc/clkgate_enable 0
+
     # Create audio-app cpuset
     mkdir /dev/cpuset/audio-app
     copy /dev/cpuset/cpus /dev/cpuset/audio-app/cpus
@@ -407,6 +412,11 @@ on property:sys.boot_completed=1
     setprop lmkd.reinit 1
     chown media audio /sys/kernel/aud_dev/state
     write /sys/devices/virtual/cvp/cvp/boot 1
+
+    #Enable UFS auto_hibern8 back
+    write /sys/bus/platform/devices/1d84000.ufshc/auto_hibern8 5000
+    #Enable UFS clock gating back
+    write /sys/bus/platform/devices/1d84000.ufshc/clkgate_enable 1
 
 on property:persist.vendor.radio.atfwd.start=false
     stop vendor.atfwd
