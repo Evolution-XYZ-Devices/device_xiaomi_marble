@@ -107,6 +107,9 @@ PRODUCT_PACKAGES += \
     FrameworksResCommon \
     FrameworksResOverlay \
     SettingsOverlay \
+    SettingsOverlayGlobal \
+    SettingsOverlayIndia \
+    SettingsOverlayChina \
     SettingsResCommon \
     SystemUIOverlay \
     SystemUIResCommon \
