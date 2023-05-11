@@ -528,3 +528,6 @@ subsystem mem_buf_vm
 /sys/bus/platform/devices/soc:fingerprint_fpc* power_ctrl       0700   system  system
 /sys/bus/platform/devices/soc:fingerprint_fpc* screen           0700   system  system
 /sys/bus/platform/devices/soc:xiaomi_fingerprint/fingerdown     0664   system  graphics
+
+# socinfo
+/sys/devices/soc0           serial_number            0000    root    root
