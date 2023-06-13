@@ -209,7 +209,7 @@
     -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
-  <!-- Set to false to disable emergency alert. -->
+    <!-- Set to false to disable emergency alert. -->
     <bool name="config_cellBroadcastAppLinks">true</bool>
 
     <!--  Maximum number of supported users -->

@@ -1,8 +1,10 @@
-# Device tree for Redmi Note 12 Turbo
+# Device tree for POCO F5 / Redmi Note 12 Turbo
 
-Redmi Note 12 Turbo (codenamed _"marble"_) is a high-end, mid-range smartphone from Xiaomi.
+The POCO F5 / Redmi Note 12 Turbo (codenamed _"marble"_) is a high-end, mid-range smartphone from Xiaomi.
 
-It was announced & released on March 2023.
+The Redmi Note 12 Turbo was announced & released on March 2023.
+
+The POCO F5 was announced & released on May 2023.
 
 ## Known issues
 - SELinux allows NEVERALLOWS, because using sysbta.
