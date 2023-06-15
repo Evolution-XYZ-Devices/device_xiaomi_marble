@@ -5,6 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "AospWifiResOverlay",
+    name: "ApertureResMarble",
     product_specific: true,
 }

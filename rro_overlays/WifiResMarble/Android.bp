@@ -5,6 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "SettingsOverlay",
+    name: "WifiResMarble",
     product_specific: true,
 }

@@ -102,23 +102,21 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AospWifiResOverlay \
+    ApertureResMarble \
     CarrierConfigResCommon \
     FrameworksResCommon \
-    FrameworksResOverlay \
-    SettingsOverlay \
+    FrameworksResMarble \
     SettingsOverlayGlobal \
     SettingsOverlayIndia \
     SettingsOverlayChina \
     SettingsResCommon \
-    SystemUIOverlay \
+    SettingsResMarble \
     SystemUIResCommon \
+    SystemUIResMarble \
     TelecommResCommon \
     TelephonyResCommon \
-    WifiResCommon
-
-PRODUCT_PACKAGES += \
-    ApertureResOverlay
+    WifiResCommon \
+    WifiResMarble
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

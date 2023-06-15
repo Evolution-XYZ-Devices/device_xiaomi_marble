@@ -5,6 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "FrameworksResOverlay",
+    name: "SettingsResMarble",
     product_specific: true,
 }
