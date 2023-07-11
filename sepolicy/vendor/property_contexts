@@ -106,6 +106,9 @@ vendor.video.mode.status                              u:object_r:vendor_displayf
 # Dolby
 vendor.dolbyv.                                        u:object_r:vendor_dolbyv_prop:s0
 
+# Fastcharge HAL
+persist.vendor.sec.fastchg_enabled                    u:object_r:vendor_fastcharge_prop:s0
+
 # Fingerprint
 persist.vendor.sys.fp.                                u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.info                            u:object_r:vendor_fp_info_prop:s0

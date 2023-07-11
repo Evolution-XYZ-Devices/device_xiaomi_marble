@@ -23,6 +23,9 @@
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.displayfeature@1\.0-service      u:object_r:vendor_hal_displayfeature_xiaomi_default_exec:s0
 /dev/mi_display/disp_feature                                              u:object_r:graphics_device:s0
 
+# Fastcharge HAL
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.fastcharge@[0-9]\.[0-9]-service\.xiaomi_marble          u:object_r:hal_lineage_fastcharge_default_exec:s0
+
 # Fingerprint
 /data/vendor/fpc(/.*)?                                                    u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor/fpdump(/.*)?                                                 u:object_r:vendor_fingerprint_data_file:s0

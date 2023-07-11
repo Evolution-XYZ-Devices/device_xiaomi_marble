@@ -226,6 +226,10 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
+# Fastcharge
+PRODUCT_PACKAGES += \
+    vendor.lineage.fastcharge@1.0-service.xiaomi_marble
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi
