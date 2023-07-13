@@ -4,6 +4,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
      package="com.android.carrierconfig.overlay.common">
+     <application android:allowBackup="false"/>
      <overlay android:targetPackage="com.android.carrierconfig"
           android:isStatic="true"
           android:priority="550" />
