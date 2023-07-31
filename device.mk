@@ -141,6 +141,7 @@ PRODUCT_PACKAGES += \
     SystemUIResMarble \
     TelecommResCommon \
     TelephonyResCommon \
+    UpdatesResMarble \
     WifiResCommon \
     WifiResMarble
 
