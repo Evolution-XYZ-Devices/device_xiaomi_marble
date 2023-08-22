@@ -44,7 +44,4 @@
 
     <!-- Expected value from fast charging status file  -->
     <string name="config_oemFastChargerStatusValue" translatable="false">1</string>
-
-    <!-- Pocket Lock -->
-    <bool name="config_pocketModeSupported">true</bool>
 </resources>
