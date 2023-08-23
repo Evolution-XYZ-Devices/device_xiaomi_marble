@@ -1,5 +1,0 @@
-allow system_app sysfs_kgsl:file r_file_perms;
-allow system_app zygote:unix_stream_socket getopt;
-
-# Battery Health
-r_dir_file(system_app, sysfs_battery_supply);
