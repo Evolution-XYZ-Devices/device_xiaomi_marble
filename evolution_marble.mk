@@ -19,9 +19,10 @@ TARGET_SUPPORTS_QUICK_TAP := true
 $(call inherit-product, device/xiaomi/marble/device.mk)
 
 ## Device identifier
+PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := marble
-PRODUCT_NAME := evolution_marble
 PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_NAME := evolution_marble
 
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
