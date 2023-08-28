@@ -17,3 +17,7 @@ allow platform_app vendor_display_prop:file read;
 get_prop(platform_app, vendor_camera_sensor_prop)
 get_prop(platform_app, vendor_displayfeature_prop)
 get_prop(platform_app, vendor_panel_info_prop)
+
+# FPS info
+allow platform_app vendor_sysfs_graphics:dir search;
+allow platform_app vendor_sysfs_graphics:file r_file_perms;

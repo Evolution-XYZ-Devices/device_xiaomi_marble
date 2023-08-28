@@ -17,3 +17,7 @@ set_prop(vendor_init, vendor_displayfeature_prop)
 allow init debugfs_tracing_debug:dir mounton;
 allow vendor_init device:chr_file getattr;
 
+# FPS info
+allow init vendor_sysfs_graphics:dir search;
+allow init vendor_sysfs_graphics:file rw_file_perms;
+
