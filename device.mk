@@ -365,7 +365,8 @@ PRODUCT_PACKAGES += \
     TetheringResCommon \
     UpdatesResOverlayMarble \
     WifiResCommon \
-    WifiResTarget
+    WifiResTarget \
+    ApertureOverlayMarble
 
 PRODUCT_PACKAGES += \
     AospWifiResOverlayMarbleChina \
