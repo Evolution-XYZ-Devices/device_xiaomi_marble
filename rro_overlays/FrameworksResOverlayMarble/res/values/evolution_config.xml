@@ -47,4 +47,8 @@
 
     <!-- Device model (Build.MODEL) to spoof for netflix -->
     <string name="config_netflixSpoofModel" translatable="false">23049PCD8G</string>
+
+    <!-- Pocket Lock -->
+    <bool name="config_pocketModeSupported">true</bool>
+    <bool name="config_pocketUseLightSensor">false</bool>
 </resources>
