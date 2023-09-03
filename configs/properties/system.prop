@@ -78,7 +78,8 @@ persist.vendor.sensors.enable.mag_filter=true
 persist.vendor.ssr.enable_ramdumps=1
 
 # SurfaceFlinger
-ro.sf.skip_set_active_mode_when_off=1
+ro.sf.defer_refresh_rate_when_off=1
+ro.sf.force_handle_idle_timeout=1
 
 # System prop for NFC DT
 ro.nfc.port=I2C
