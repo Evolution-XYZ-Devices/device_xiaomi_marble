@@ -135,7 +135,7 @@ PRODUCT_PACKAGES_DEBUG += \
 # Camera
 TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT := true
 TARGET_INCLUDES_MIUI_CAMERA := true
-$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
@@ -149,6 +149,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
+
+# Camera Legacy HIDL deps
+PRODUCT_PACKAGES += \
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0.vendor \
+    android.hidl.memory.block@1.0 \
+    android.hidl.memory.block@1.0.vendor \
+    android.hidl.memory@1.0-impl
 
 # Capabilityconfigstore
 PRODUCT_PACKAGES += \
