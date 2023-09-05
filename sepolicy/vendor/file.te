@@ -40,3 +40,6 @@ type thermal_data_file, data_file_type, file_type;
 
 # Touchfeature
 type sysfs_tp_fodstatus, fs_type, sysfs_type;
+
+# Touchpanel
+type sysfs_touchpanel, fs_type, sysfs_type;
