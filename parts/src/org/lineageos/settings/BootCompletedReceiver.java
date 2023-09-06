@@ -26,6 +26,7 @@ import android.view.Display.HdrCapabilities;
 import android.view.SurfaceControl;
 
 import org.lineageos.settings.dirac.DiracUtils;
+import org.lineageos.settings.display.ColorService;
 import org.lineageos.settings.dolby.DolbyUtils;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
@@ -39,10 +40,18 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
+
+        // Dolby Atmos
         DolbyUtils.getInstance(context).onBootCompleted();
+
         DozeUtils.checkDozeService(context);
         RefreshUtils.initialize(context);
+
+        // Thermal Profiles
         ThermalUtils.startService(context);
+
+        // DisplayFeature
+        ColorService.startService(context);
 
         // Override HDR types
         final IBinder displayToken = SurfaceControl.getInternalDisplayToken();
