@@ -225,7 +225,6 @@ vendor.display.use_layer_ext=0
 vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
 
-
 # Displayfeature
 ro.vendor.displayfeature.dump=true
 ro.vendor.colorpick_adjust=true
@@ -260,6 +259,10 @@ persist.vendor.dc_backlight.enable=false
 persist.vendor.dc_backlight.threshold=0
 
 # Dolby
+persist.vendor.audio_fx.current=dolby
+vendor.audio.dolby.ds2.enabled=true
+ro.vendor.audio.dolby.dax.support=true
+ro.vendor.audio.dolby.surround.enable=true
 ro.vendor.dolby.dax.version=DAX3_3.6.1.6_r1
 
 # Dolby Vision
