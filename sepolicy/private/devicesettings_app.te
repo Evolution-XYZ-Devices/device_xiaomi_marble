@@ -9,6 +9,7 @@ allow devicesettings_app {
   mediaextractor_service
   mediametrics_service
   mediaserver_service
+  surfaceflinger_service
 }:service_manager find;
 
 
