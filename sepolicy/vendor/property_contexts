@@ -1,4 +1,6 @@
 # Camera
+vendor.camera.                                        u:object_r:vendor_camera_prop:s0
+ro.boot.camera.                                       u:object_r:vendor_camera_prop:s0
 vendor.camera.sensor. u:object_r:vendor_camera_sensor_prop:s0
 
 # DDR
@@ -38,7 +40,7 @@ ro.vendor.display.ai_disp.enable u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.aod_monitor_default_fps u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.benchmark_app u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.default_fps u:object_r:vendor_displayfeature_prop:s0
-ro.vendor.display.dither u:object_r:vendor_displayfeature_prop:s0
+ro.vendor.display.dither                              u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.dolbyvision.support u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.dual_builtin_disp u:object_r:vendor_displayfeature_prop:s0
 #ro.vendor.display.dynamic_refresh_rate u:object_r:vendor_promotion_prop:s0
@@ -51,7 +53,7 @@ ro.vendor.display.ltpo.idle.switch.powercloud u:object_r:vendor_displayfeature_p
 ro.vendor.display.ltpo.powerfull.with.charger.support u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.ltpo.sync.tp u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.ltpo.tp.idle.lowbrightness.support u:object_r:vendor_displayfeature_prop:s0
-ro.vendor.display.mi_calib.enable u:object_r:vendor_displayfeature_prop:s0
+ro.vendor.display.mi_calib.enable                     u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.nature_mode.enable u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.papercontrast.opt u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.display.primary.fps.limit u:object_r:vendor_displayfeature_prop:s0
@@ -75,7 +77,7 @@ ro.vendor.fps.switch.thermal u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.gcp.enable u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.hbm_backlight.enable u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.hist.threshold u:object_r:vendor_displayfeature_prop:s0
-ro.vendor.histogram.enable u:object_r:vendor_displayfeature_prop:s0
+ro.vendor.histogram.enable                            u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.localhbm.enable u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.media.video.style.support u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.need.check.cup.hbm.coverlayer.enable u:object_r:vendor_displayfeature_prop:s0
@@ -83,14 +85,15 @@ ro.vendor.pcc.dc.enable u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.sdr2hdr.by.layer.support u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.sf.enable_fb_scaling u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.soft_backlight.enable u:object_r:vendor_displayfeature_prop:s0
-ro.vendor.sre.enable u:object_r:vendor_displayfeature_prop:s0
+ro.vendor.sre.enable                                  u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.standard.video.enable u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.thermal.dimming.enable u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.use.partial.brightness u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.video.style.by.layer.support u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.video_box.version u:object_r:vendor_displayfeature_prop:s0
 ro.vendor.whitepoint_calibration_enable u:object_r:vendor_displayfeature_prop:s0
-ro.vendor.xiaomi.bl.poll u:object_r:vendor_displayfeature_prop:s0
+ro.vendor.xiaomi.bl.poll                              u:object_r:vendor_displayfeature_prop:s0
+init.svc.vendor.displayfeature-hal-1-0                u:object_r:vendor_displayfeature_prop:s0
 vendor.display.enable_fb_scaling u:object_r:vendor_displayfeature_prop:s0
 vendor.display.hwc_backlight.support u:object_r:vendor_displayfeature_prop:s0
 vendor.displayfeature.entry.enable u:object_r:vendor_displayfeature_prop:s0
@@ -101,11 +104,13 @@ vendor.video.mode.status u:object_r:vendor_displayfeature_prop:s0
 vendor.dolbyv. u:object_r:vendor_dolbyv_prop:s0
 
 # Fingerprint
-persist.vendor.sys.fp. u:object_r:vendor_fp_prop:s0
+persist.vendor.sys.fp.                                u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.info u:object_r:vendor_fp_info_prop:s0
 persist.vendor.sys.fp.uid u:object_r:vendor_fp_info_prop:s0
-vendor.fps_hal. u:object_r:vendor_fp_prop:s0
+ro.hardware.fp.                                       u:object_r:vendor_fp_prop:s0
+vendor.fps_hal.                                       u:object_r:vendor_fp_prop:s0
 vendor.panel.display. u:object_r:vendor_fp_prop:s0
+vendor.sys.fp                                         u:object_r:vendor_fp_prop:s0
 persist.vendor.goodix. u:object_r:vendor_fp_prop:s0
 persist.vendor.fpc. u:object_r:vendor_fp_prop:s0
 
@@ -116,8 +121,8 @@ ro.vendor.gnss.edgnss.downloadQxwzAk u:object_r:vendor_edgnss_qxwz_downloadak_pr
 vendor.panel. u:object_r:vendor_panel_info_prop:s0
 
 # Mlipay
-persist.vendor.sys.pay. u:object_r:vendor_mlipay_prop:s0
-persist.vendor.sys.provision.status u:object_r:vendor_mlipay_prop:s0
+persist.vendor.sys.pay.                               u:object_r:vendor_mlipay_prop:s0
+persist.vendor.sys.provision.status                   u:object_r:vendor_mlipay_prop:s0
 vendor.sys.feature_state u:object_r:vendor_payment_security_prop:s0
 vendor.sys.rpmb_state u:object_r:vendor_payment_security_prop:s0
 
@@ -138,5 +143,5 @@ vendor.sla.wlan.interface u:object_r:vendor_slad_prop:s0
 vendor.sla.wwan.interface u:object_r:vendor_slad_prop:s0
 
 # Thermal
+vendor.sys.thermal.                                   u:object_r:vendor_thermal_prop:s0
 vendor.sys.thermal.data.path u:object_r:vendor_thermal_normal_prop:s0
-

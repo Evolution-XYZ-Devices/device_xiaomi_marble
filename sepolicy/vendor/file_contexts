@@ -5,13 +5,13 @@
 /dev/xlog u:object_r:sound_device:s0
 /sys/devices/platform/soc/[a-z0-9]+.i2c/i2c-+[0-9]/[0-9]+-00+[a-z0-9]+[a-z0-9]/f0_value u:object_r:sysfs_f0_value:s0
 
-# Battery
-/(vendor|system/vendor)/bin/batterysecret u:object_r:batterysecret_exec:s0
+# Battery secret
+/vendor/bin/batterysecret                                                 u:object_r:batterysecret_exec:s0
 
 # Camera
 /data/user/0/com.android.camera(/.*)? u:object_r:app_data_file:s0
 /(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.quickcamera@1.0-service u:object_r:hal_quickcamera_default_exec:s0
-/mnt/vendor/persist/camera(/.*)? u:object_r:camera_persist_file:s0
+/mnt/vendor/persist/camera(/.*)?                                          u:object_r:camera_persist_file:s0
 #/vendor/bin/camera_cal u:object_r:DualCameraCal_exec:s0
 /vendor/lib(64)?/libQnnHtpV69Stub\.so u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libQnnHtp\.so u:object_r:same_process_hal_file:s0
@@ -31,48 +31,48 @@
 /vendor/lib(64)?/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel\.so u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/rfsa/adsp/libsnpe_dsp_v68_domains_v3_skel\.so u:object_r:same_process_hal_file:s0
 
-# CIT
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.sensor.citsensorservice@1.1-service u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
-
 # Diag
 /data/vendor/modem(/.*)? u:object_r:vendor_modem_data_file:s0
 
 # Display
-/(vendor|system/vendor)/bin/displayfeature           u:object_r:vendor_displayfeature_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.displayfeature@1\.0-service u:object_r:vendor_hal_displayfeature_xiaomi_default_exec:s0
-/dev/mi_display/disp_feature u:object_r:vendor_displayfeature_device:s0
-/sys/devices/virtual/mi_display/disp_feature/disp-DSI-+[0-1](/.*)? u:object_r:vendor_sysfs_displayfeature:s0
+/sys/devices/virtual/mi_display/disp_feature/disp-DSI-+[0-1](/.*)?        u:object_r:vendor_sysfs_graphics:s0
 
-# Dolby
-/data/vendor/dolby(/.*)? u:object_r:vendor_data_file:s0
-/vendor/bin/hw/dolbycodec2 u:object_r:vendorcodec_exec:s0
+# Displayfeature
+/vendor/bin/displayfeature                                                u:object_r:vendor_displayfeature_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.displayfeature@1\.0-service      u:object_r:vendor_hal_displayfeature_xiaomi_default_exec:s0
+/dev/mi_display/disp_feature                                              u:object_r:graphics_device:s0
 
 # Fingerprint
-/dev/goodix_fp u:object_r:vendor_fingerprint_device:s0
-/data/vendor/fpc(/.*)? u:object_r:vendor_fingerprint_data_file:s0
-/data/vendor/goodix(/.*)? u:object_r:vendor_fingerprint_data_file:s0
-/data/vendor/fpdump(/.*)?			u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/fpc(/.*)?                                                    u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/fpdump(/.*)?                                                 u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/goodix(/.*)?                                                 u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor/goodix/gf_data(/.*)?		u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor_de/[0-9]+/goodix(/.*)?		u:object_r:vendor_fingerprint_data_file:s0
+/dev/goodix_fp                                                            u:object_r:vendor_fingerprint_device:s0
 /mnt/vendor/persist/fpc(/.*)? u:object_r:vendor_fingerprint_data_file:s0
 /mnt/vendor/persist/goodix(/.*)? u:object_r:vendor_fingerprint_data_file:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
 
 # GNSS
-/data/vendor/ins(/.*)? u:object_r:vendor_ins_vendor_data_file:s0
-/data/vendor/qxwz(/.*)? u:object_r:qx_oss_vendor_data_file:s0
-/mnt/vendor/persist/qxwz u:object_r:qx_oss_vendor_data_file:s0
+/data/vendor/ins(/.*)?                                                    u:object_r:vendor_ins_vendor_data_file:s0
+/data/vendor/qxwz(/.*)?                                                   u:object_r:qx_oss_vendor_data_file:s0
+/mnt/vendor/persist/qxwz                                                  u:object_r:qx_oss_vendor_data_file:s0
 
 # FPS info
-/sys/class/drm/card0/sde-crtc-0/measured_fps                         u:object_r:vendor_sysfs_graphics:s0
+/sys/class/drm/card0/sde-crtc-0/measured_fps                              u:object_r:vendor_sysfs_graphics:s0
 
 # IR
-/dev/ir_spi u:object_r:ir_spi_device:s0
+/dev/ir_spi                                                               u:object_r:ir_spi_device:s0
 
 # Mac Address
 /data/vendor/mac_addr(/.*)? u:object_r:vendor_mac_vendor_data_file:s0
-/vendor/bin/nv_mac u:object_r:vendor_wcnss_service_exec:s0
+
+# Media
+/data/vendor/dolby(/.*)?                                                  u:object_r:vendor_data_file:s0
+/data/vendor/multimedia(/.*)?                                             u:object_r:vendor_data_file:s0
+/vendor/bin/hw/dolbycodec2                                                u:object_r:mediacodec_exec:s0
+/vendor/bin/hw/vendor\.dolby\.media\.c2@1\.0-service                      u:object_r:mediacodec_exec:s0
+/vendor/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service                  u:object_r:hal_dms_default_exec:s0
 
 # Mlipay
 /(vendor|system/vendor)/bin/fidoca                   u:object_r:hal_mfidoca_default_exec:s0
@@ -91,6 +91,9 @@
 # Modem
 /dev/smd8 u:object_r:vendor_radio_smd_device:s0
 
+# NV MAC
+/vendor/bin/nv_mac                                                        u:object_r:vendor_wcnss_service_exec:s0
+
 # QRTR
 /(vendor|system/vendor)/bin/qrtr-lookup u:object_r:vendor_qrtr_exec:s0
 
@@ -98,9 +101,11 @@
 /data/vendor/diag(/.*)? u:object_r:minidump_data_file:s0
 
 # Sensors
-/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@2.1-service\.xiaomi-multihal u:object_r:hal_sensors_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.sensor.communicate@1.0-service u:object_r:vendor_hal_sensorcommunicate_default_exec:s0
-/dev/stmvl53l5 u:object_r:stmvl53l5_device:s0
+/vendor/bin/hw/vendor\.xiaomi\.sensor\.citsensorservice@1\.1-service      u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.sensor\.citsensorservice@2\.0-service      u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
+/vendor/bin/hw/android\.hardware\.sensors@2.1-service\.xiaomi-multihal    u:object_r:hal_sensors_default_exec:s0
+/vendor/bin/hw/vendor.xiaomi.sensor.communicate@1.0-service               u:object_r:vendor_hal_sensorcommunicate_default_exec:s0
+/dev/stmvl53l5                                                            u:object_r:stmvl53l5_device:s0
 
 # SLA
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.sla\.service\@1\.0-service u:object_r:hal_slaservice_qti_exec:s0
@@ -108,18 +113,20 @@
 /dev/socket/slad u:object_r:slad_socket:s0
 
 # Thermal
-/(vendor|system/vendor)/bin/mi_thermald u:object_r:mi_thermald_exec:s0
-/data/vendor/thermal(/.*)? u:object_r:thermal_data_file:s0
-/sys/class/thermal/thermal_message/flash_state u:object_r:sys_thermal_flash_state:s0
-/sys/class/thermal/thermal_message/wifi_limit u:object_r:sys_thermal_wifi_limit:s0
-/sys/class/thermal/thermal_zone87/temp u:object_r:sysfs_thermal:s0
-/sys/devices/virtual/thermal/thermal_message/flash_state u:object_r:sys_thermal_flash_state:s0
-/sys/devices/virtual/thermal/thermal_message/wifi_limit u:object_r:sys_thermal_wifi_limit:s0
+/vendor/bin/mi_thermald                                                   u:object_r:mi_thermald_exec:s0
+/data/vendor/thermal(/.*)?                                                u:object_r:thermal_data_file:s0
+/sys/class/thermal/thermal_message/flash_state                            u:object_r:sys_thermal_flash_state:s0
+/sys/class/thermal/thermal_message/wifi_limit                             u:object_r:sys_thermal_wifi_limit:s0
+/sys/class/thermal/thermal_zone87/temp                                    u:object_r:sysfs_thermal:s0
+/sys/devices/virtual/thermal/thermal_message/flash_state                  u:object_r:sys_thermal_flash_state:s0
+/sys/devices/virtual/thermal/thermal_message/wifi_limit                   u:object_r:sys_thermal_wifi_limit:s0
 
-# Touchfeature
-/dev/xiaomi-touch u:object_r:touchfeature_device:s0
-
-/vendor/bin/hw/vendor\.xiaomi\.hw\.touchfeature@1\.0-service u:object_r:hal_touchfeature_xiaomi_default_exec:s0
+# Touch
+/dev/xiaomi-touch                                                         u:object_r:vendor_touchfeature_device:s0
+/vendor/bin/hw/vendor\.xiaomi\.hw\.touchfeature@1\.0-service              u:object_r:hal_touchfeature_xiaomi_default_exec:s0
 
 # Vibrator
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.xiaomi u:object_r:hal_vibrator_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.xiaomi           u:object_r:hal_vibrator_default_exec:s0
+
+# Wakeup nodes
+/sys/devices/platform/soc/soc:qcom,msm-audio-apr/soc:qcom,msm-audio-apr:qcom,q6core-audio/soc:qcom,msm-audio-apr:qcom,q6core-audio:sound/Listen\s[0-9]+\sAudio\sService/wakeup/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
