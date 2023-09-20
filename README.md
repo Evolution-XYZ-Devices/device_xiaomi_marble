@@ -1,32 +1,30 @@
-# Device tree for Redmi Note 12 Turbo/Poco F5
+# Device tree for Poco F5/Redmi Note 12 Turbo
 
-Redmi Note 12 Turbo/Poco F5 (codenamed _"marble"_) is a high-end, mid-range smartphone from Xiaomi.
+Poco F5/Redmi Note 12 Turbo (codenamed _"marble"_) is a high-end, mid-range smartphone from Xiaomi.
 
 It was announced & released in March 2023.
 
 ## Needed patches
+
 Dolby Vision (hardware_qcom_sm8450-caf)
-- https://github.com/AOSPA/android_hardware_qcom_display/commit/a1411d27666e5cf2ac8c01e967412812d4384494
-- https://github.com/AOSPA/android_hardware_qcom_display/commit/b4095025b66d86635c2ed44d39c72f222803fbb6
+- https://github.com/Evolution-X/hardware_qcom-caf_sm8450_display/commit/a62d9a876646a76505b3dc66591eb7606530d8e8
+- https://github.com/Evolution-X/hardware_qcom-caf_sm8450_display/commit/a319405d0d1eaf4fed14aeed0aba3d569a2b8779
 
-FEAS
-- https://gist.github.com/YuKongA/81924b5685338645ee8e672fe4c2e5a0
+FEAS (frameworks_native)
+- https://github.com/Evolution-X/frameworks_native/commit/c063341f58b9562814db94b235c8985b10014268
 
-HWC
-- https://github.com/pa-gr/android_frameworks_native/commit/61060ad
+HWC (frameworks_native)
+- https://github.com/Evolution-X/frameworks_native/commit/10c9c18a652e113ab92cfebb32685bd3c4e6ea87
 
-LDAC
-- https://github.com/syberia-project/platform_hardware_interfaces/commit/962a90be9d530d652030976857cf758bc8a31556
+LDAC (hardware_interfaces)
+- https://github.com/Evolution-X/hardware_interfaces/commit/4f9b11ee1e0ce4c902b1932f6f98502300fc343e
 
 LTE_CA (frameworks_base)
-- https://github.com/AlphaDroid-Project/frameworks_base/commit/b8c21bfa2cc32dde70d3fc6f3bc860fcfbcdc2db
+- https://github.com/Evolution-X/frameworks_base/commit/53398e8f073c4956b11c93063eb13b8d2f1ac097
 
 Media (frameworks_av)
-- https://review.lineageos.org/c/LineageOS/android_frameworks_av/+/342862
-
-SurfaceFlinger (frameworks_native)
-- https://gerrit.aospa.co/c/AOSPA/android_frameworks_native/+/33898
-- https://gerrit.aospa.co/c/AOSPA/android_frameworks_native/+/33899
+- https://github.com/Evolution-X/frameworks_av/commit/b65b94b0d5fdca38712ce669ab568182c3d9819d
+- https://github.com/Evolution-X/frameworks_av/commit/2e8f6aa3abbd4a82b7c96f401009fd969f6c9ad9
 
 ## Device specifications
 
