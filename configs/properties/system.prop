@@ -48,6 +48,11 @@ ro.lmk.psi_scrit_complete_stall_ms=150
 ro.lmk.direct_reclaim_pressure=45
 ro.lmk.reclaim_scan_threshold=0
 
+# Graphics
+debug.hwui.renderer=opengl
+renderthread.skia.reduceopstasksplitting=true 
+debug.renderengine.backend=skiaglthreaded
+
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
