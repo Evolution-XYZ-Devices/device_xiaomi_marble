@@ -405,20 +405,18 @@ PRODUCT_COPY_FILES += \
 # Overlays
 PRODUCT_PACKAGES += \
     AospWifiResOverlayMarble \
-    CarrierConfigResCommon \
+    ApertureOverlayMarble \
+    CarrierConfigResMarble \
     FrameworksResCommon \
     FrameworksResOverlayMarble \
     SettingsOverlayMarble \
-    SettingsResCommon \
     SystemUIOverlayMarble \
-    SystemUIResCommon \
     TelecommResCommon \
     TelephonyResCommon \
     TetheringResCommon \
     UpdatesResOverlayMarble \
-    WifiResCommon \
-    WifiResTarget \
-    ApertureOverlayMarble
+    WifiResMarble \
+    WifiResTarget
 
 PRODUCT_PACKAGES += \
     AospWifiResOverlayMarbleChina \
@@ -650,7 +648,7 @@ WPA := wpa_cli
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6490/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6490/WCNSS_qcom_cfg.ini
 
 # WiFi Display
 PRODUCT_PACKAGES += \
