@@ -247,6 +247,10 @@ vendor/lib64/soundfx/libvisualizer.so
 vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.pal@1.0.so
 
+# Spatial Audio
+vendor/lib/soundfx/libspatialaudio.so
+vendor/lib64/soundfx/libspatialaudio.so
+
 # Batterysecret
 vendor/bin/batterysecret
 vendor/etc/init/hw/init.batterysecret.rc
