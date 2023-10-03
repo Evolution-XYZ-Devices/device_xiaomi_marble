@@ -212,5 +212,10 @@
             android:permission="NfcCameraService">
         </service>
 
+        <service
+            android:name=".doze.AodBrightnessService"
+            android:permission="AodBrightnessService">
+        </service>
+
     </application>
 </manifest>
