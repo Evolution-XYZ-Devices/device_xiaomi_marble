@@ -1,0 +1,10 @@
+[
+  {
+    "repository": "vendor_xiaomi_marble",
+    "target_path": "vendor/xiaomi/marble"
+  },
+  {
+    "repository": "device_xiaomi_marble-kernel",
+    "target_path": "device/xiaomi/marble-kernel"
+  }
+]
