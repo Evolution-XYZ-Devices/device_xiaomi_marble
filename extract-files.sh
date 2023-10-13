@@ -59,6 +59,7 @@ function blob_fixup() {
     vendor/bin/hw/vendor.qti.hardware.display.composer-service)
         "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
         "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
+        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
         ;;
     vendor/bin/hw/vendor.qti.secure_element@1.2-service)
         "${PATCHELF}" --replace-needed "jcos_nq_client-v1.so" "jcos_nq_client.so" "${2}"
