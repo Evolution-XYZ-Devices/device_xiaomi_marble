@@ -170,6 +170,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libgpu_tonemapper \
     libqservice \
+    libsdedrm \
     libsdmcore \
     libsdmutils \
     vendor.display.config@1.11.vendor \
