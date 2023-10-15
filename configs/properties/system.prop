@@ -85,10 +85,6 @@ ro.sf.force_handle_idle_timeout=1
 # System prop for NFC DT
 ro.nfc.port=I2C
 
-# WiFi display
-persist.debug.wfd.enable=1
-persist.sys.wfd.virtual=0
-
 # WLAN
 ro.hardware.wlan.chip=qca6490
 ro.hardware.wlan.dbs=2
