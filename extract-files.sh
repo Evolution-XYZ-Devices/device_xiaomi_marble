@@ -56,11 +56,6 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-    vendor/bin/hw/vendor.qti.secure_element@1.2-service)
-        "${PATCHELF}" --replace-needed "jcos_nq_client-v1.so" "jcos_nq_client.so" "${2}"
-        "${PATCHELF}" --replace-needed "ls_nq_client-v1.so" "ls_nq_client.so" "${2}"
-        "${PATCHELF}" --replace-needed "se_nq_extn_client-v1.so" "se_nq_extn_client.so" "${2}"
-        ;;
     vendor/etc/camera/marble*_motiontuning.xml)
         sed -i 's/xml=version/xml\ version/g' "${2}"
         ;;
