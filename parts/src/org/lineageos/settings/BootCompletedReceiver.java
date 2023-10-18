@@ -40,10 +40,20 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
 
+        // Dirac
+        // try {
+        //    DiracUtils.getInstance(context);
+        // } catch (Exception e) {
+        //    Log.d(TAG, "Dirac is not present in system");
+        // }
+
         // Dolby Atmos
         DolbyUtils.getInstance(context).onBootCompleted();
 
+        // Doze
         DozeUtils.checkDozeService(context);
+
+        // Refresh Rate
         RefreshUtils.initialize(context);
 
         // Thermal Profiles

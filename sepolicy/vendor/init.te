@@ -20,4 +20,3 @@ allow vendor_init device:chr_file getattr;
 # FPS info
 allow init vendor_sysfs_graphics:dir search;
 allow init vendor_sysfs_graphics:file rw_file_perms;
-

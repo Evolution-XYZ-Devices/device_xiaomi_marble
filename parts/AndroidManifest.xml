@@ -86,16 +86,16 @@
                        android:value="content://org.lineageos.settings.device.summary/dolby" />
         </activity>
 
+        <provider
+            android:name=".SummaryProvider"
+            android:authorities="org.lineageos.settings.device.summary">
+        </provider>
+
         <service
             android:name=".doze.DozeService"
             android:exported="true"
             android:permission="DozeService">
         </service>
-
-        <provider
-            android:name=".SummaryProvider"
-            android:authorities="org.lineageos.settings.device.summary">
-        </provider>
 
         <activity
             android:name=".doze.DozeSettingsActivity"

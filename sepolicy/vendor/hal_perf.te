@@ -21,3 +21,4 @@ allow vendor_hal_perf_default hal_mfidoca_default:dir search;
 allow vendor_hal_perf_default hal_mfidoca_default:process getpgid;
 
 set_prop(vendor_hal_perf_default, vendor_wlc_public_prop)
+r_dir_file(vendor_hal_perf_default, system_server)

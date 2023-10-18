@@ -1,5 +1,3 @@
-# Device proprietary files - from marble MIUI V14.0.7.0.TMRMIXM package, unless pinned
-
 # ACDB
 vendor/etc/acdbdata/Forte/Forte_acdb_cal.acdb
 vendor/etc/acdbdata/Forte/Forte_workspaceFileXml.qwsp
@@ -271,7 +269,9 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
 # Camera
 system/lib/libhidltransport.so
+system/lib/libui.so
 system/lib64/libhidltransport.so
+system/lib64/libui.so
 vendor/bin/hw/vendor.qti.camera.provider@2.7-service_64
 vendor/bin/hw/vendor.xiaomi.hardware.quickcamera@1.0-service
 vendor/etc/init/vendor.qti.camera.provider@2.7-service_64.rc

@@ -4,27 +4,6 @@ Poco F5/Redmi Note 12 Turbo (codenamed _"marble"_) is a high-end, mid-range smar
 
 It was announced & released in March 2023.
 
-## Needed patches
-
-Dolby Vision (hardware_qcom-caf_sm8450)
-- https://github.com/Evolution-X/hardware_qcom-caf_sm8450_display/commit/a62d9a876646a76505b3dc66591eb7606530d8e8
-- https://github.com/Evolution-X/hardware_qcom-caf_sm8450_display/commit/a319405d0d1eaf4fed14aeed0aba3d569a2b8779
-
-FEAS (frameworks_native)
-- https://github.com/Evolution-X/frameworks_native/commit/c063341f58b9562814db94b235c8985b10014268
-
-HWC (frameworks_native)
-- https://github.com/Evolution-X/frameworks_native/commit/10c9c18a652e113ab92cfebb32685bd3c4e6ea87
-
-LDAC (hardware_interfaces)
-- https://github.com/Evolution-X/hardware_interfaces/commit/4f9b11ee1e0ce4c902b1932f6f98502300fc343e
-
-LTE_CA (frameworks_base)
-- https://github.com/Evolution-X/frameworks_base/commit/53398e8f073c4956b11c93063eb13b8d2f1ac097
-
-Media (frameworks_av)
-- https://github.com/Evolution-X/frameworks_av/commit/b65b94b0d5fdca38712ce669ab568182c3d9819d
-
 ## Device specifications
 
 |      Basic | Spec Sheet                                                        |

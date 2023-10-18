@@ -1,16 +1,11 @@
 # Bluetooth
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptiver2-aac-ldac-lhdc
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptiver2-aac-ldac-lhdc
 persist.vendor.btstack.enable.twsplus=true
 persist.vendor.btstack.enable.twsplussho=true
-persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptiver2-aac-ldac-lhdc
-persist.vendor.bt.a2dp.aac_whitelist=false
-persist.vendor.bt.aac_frm_ctl.enabled=true
 persist.vendor.bt.a2dp.hal.implementation=true
-persist.vendor.bt.aac_vbr_frm_ctl.enabled=true
-
-# Camera
-persist.vendor.camera.privapp.list=org.lineageos.aperture.org.codeaurora.snapcam,com.android.camera,com.google.camera
-vendor.camera.aux.packagelist=org.lineageos.aperture,org.codeaurora.snapcam,com.android.camera,com.google.camera
+persist.vendor.bt.a2dp.aac_whitelist=false
+persist.vendor.btstack.enable.lpa=true
 
 # Charger
 ro.charger.enable_suspend=1
@@ -27,9 +22,19 @@ debug.hwui.skia_atrace_enabled=false
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
+# Graphics
+debug.hwui.renderer=opengl
+renderthread.skia.reduceopstasksplitting=true 
+debug.renderengine.backend=skiaglthreaded
+
 # Hint Manager
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
+
+# IMS
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
 
 # LMK properties
 ro.lmk.kill_heaviest_task=true
@@ -44,16 +49,6 @@ ro.lmk.stall_limit_critical=40
 ro.lmk.psi_scrit_complete_stall_ms=150
 ro.lmk.direct_reclaim_pressure=45
 ro.lmk.reclaim_scan_threshold=0
-
-# Graphics
-debug.hwui.renderer=opengl
-renderthread.skia.reduceopstasksplitting=true 
-debug.renderengine.backend=skiaglthreaded
-
-# IMS
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
 
 # Radio VoNR Calling
 persist.radio.is_vonr_enabled_0=true

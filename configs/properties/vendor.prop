@@ -166,20 +166,20 @@ bluetooth.hardware.power.idle_cur_ma=6
 bluetooth.hardware.power.operating_voltage_mv=3700
 bluetooth.hardware.power.rx_cur_ma=28
 bluetooth.hardware.power.tx_cur_ma=36
-bluetooth.profile.a2dp.source.enabled=true
-bluetooth.profile.avrcp.target.enabled=true
-bluetooth.profile.avrcp.controller.enabled=false
-bluetooth.profile.hfp.ag.enabled=true
-bluetooth.profile.asha.central.enabled=true
-bluetooth.profile.gatt.enabled=true
-bluetooth.profile.hid.host.enabled=true
-bluetooth.profile.hid.device.enabled=true
-bluetooth.profile.map.server.enabled=true
-bluetooth.profile.opp.enabled=true
-bluetooth.profile.pan.nap.enabled=true
-bluetooth.profile.pan.panu.enabled=true
-bluetooth.profile.pbap.server.enabled=true
-bluetooth.profile.sap.server.enabled=false
+bluetooth.profile.a2dp.source.enabled?=true
+bluetooth.profile.avrcp.target.enabled?=true
+bluetooth.profile.avrcp.controller.enabled?=false
+bluetooth.profile.hfp.ag.enabled?=true
+bluetooth.profile.asha.central.enabled?=true
+bluetooth.profile.gatt.enabled?=true
+bluetooth.profile.hid.host.enabled?=true
+bluetooth.profile.hid.device.enabled?=true
+bluetooth.profile.map.server.enabled?=true
+bluetooth.profile.opp.enabled?=true
+bluetooth.profile.pan.nap.enabled?=true
+bluetooth.profile.pan.panu.enabled?=true
+bluetooth.profile.pbap.server.enabled?=true
+bluetooth.profile.sap.server.enabled?=false
 ro.bluetooth.a2dp_offload.supported=true
 persist.bluetooth.a2dp_offload.disabled=false
 persist.bluetooth.sbc_hd_higher_bitrate=1
@@ -225,7 +225,6 @@ vendor.display.use_layer_ext=0
 vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
 
-
 # Displayfeature
 ro.vendor.displayfeature.dump=true
 ro.vendor.colorpick_adjust=true
@@ -258,12 +257,11 @@ ro.sf.force_hwc_brightness=1
 persist.vendor.dc_backlight.enable=false
 persist.vendor.dc_backlight.threshold=0
 
-# Dolby
+# Dolby Music
 ro.vendor.dolby.dax.version=DAX3_3.6.1.6_r1
 
 # Dolby Vision
 ro.vendor.audio.dolby.vision.support=true
-debug.config.media.video.dolby_vision_suports=true
 
 # DPM
 persist.vendor.dpm.vndr.idletimer.mode=default
@@ -385,7 +383,7 @@ ro.vendor.se.chip.model=SN110T
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf-hal.ver=2.3
-ro.vendor.perf.scroll_opt=true
+ro.vendor.perf.scroll_opt=1
 ro.vendor.perf.scroll_opt.heavy_app=2
 vendor.power.pasr.enabled=false
 vendor.pasr.activemode.enabled=false

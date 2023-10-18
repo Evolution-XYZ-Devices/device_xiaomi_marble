@@ -18,8 +18,6 @@ genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix                     
 genfscon sysfs /devices/platform/soc/soc:xiaomi_fingerprint/fingerdown              u:object_r:vendor_sysfs_fingerprint:s0
 
 # Sensor
-genfscon sysfs /devices/virtual/touch/touch_dev/palm_sensor                         u:object_r:vendor_sysfs_palm_sensor:s0
-genfscon sysfs /sys/class/touch/touch_dev/partial_diff_data                         u:object_r:sysfs_touchpanel:s0
 genfscon sysfs /sys/class/touch/touch_dev/palm_sensor                               u:object_r:vendor_sysfs_palm_sensor:s0
 
 # Wakeup nodes

@@ -55,9 +55,9 @@ SOONG_CONFIG_ufsbsg += ufsframework
 SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
 # Bootloader
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := taro
 TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 # Build
 BUILD_BROKEN_DUP_RULES := true
@@ -71,6 +71,10 @@ BUILD_BROKEN_USES_SOONG_PYTHON2_MODULES := true
 
 # Camera
 TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
+TARGET_INCLUDES_MIUI_CAMERA := true
+
+# Density
+TARGET_SCREEN_DENSITY := 440
 
 # Display
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
@@ -87,9 +91,6 @@ SOONG_CONFIG_NAMESPACES += dolby_vision
 SOONG_CONFIG_dolby_vision += enabled
 SOONG_CONFIG_dolby_vision_enabled := true
 
-# DRM
-TARGET_ENABLE_MEDIADRM_64 := true
-
 # DTB
 BOARD_USES_DT := true
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtbs
@@ -101,6 +102,10 @@ TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_marble
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(CONFIGS_PATH)/config.fs
+
+# Fstab
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 
 # Kernel
 BOARD_KERNEL_PAGESIZE := 4096
@@ -123,8 +128,8 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 BOARD_KERNEL_IMAGE_NAME := Image
 
-BOARD_RAMDISK_USE_LZ4 := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
 # Kill kernel build task while preserving kernel
@@ -175,12 +180,8 @@ BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor vendor_dlkm
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9659482112
 
-BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST))
+$(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4))
 
 TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_PRODUCT := product
@@ -208,21 +209,15 @@ TARGET_SYSTEM_EXT_PROP += $(CONFIGS_PATH)/properties/system_ext.prop
 TARGET_VENDOR_PROP += $(CONFIGS_PATH)/properties/vendor.prop
 
 # Recovery
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
+BOARD_USES_RECOVERY_AS_BOOT := false
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-BOARD_USES_RECOVERY_AS_BOOT := false
-BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
-
-# Screen density
-TARGET_SCREEN_DENSITY := 440
-
-# Security patch level
-VENDOR_SECURITY_PATCH := 2023-08-01
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
@@ -231,9 +226,18 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
-# Vendor boot
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+# VINTF
+DEVICE_MATRIX_FILE := $(CONFIGS_PATH)/vintf/compatibility_matrix.xml
+DEVICE_MANIFEST_SKUS := ukee
+DEVICE_MANIFEST_UKEE_FILES := \
+    $(CONFIGS_PATH)/vintf/manifest_ukee.xml \
+    $(CONFIGS_PATH)/vintf/manifest_xiaomi.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    $(CONFIGS_PATH)/vintf/vendor_framework_compatibility_matrix.xml \
+    $(CONFIGS_PATH)/vintf/xiaomi_framework_compatibility_matrix.xml \
+    vendor/evolution/config/device_framework_matrix.xml
+ODM_MANIFEST_SKUS += marble
+ODM_MANIFEST_MARBLE_FILES := $(CONFIGS_PATH)/vintf/manifest_nfc.xml
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -250,19 +254,6 @@ BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
-
-# VINTF
-DEVICE_MATRIX_FILE := $(CONFIGS_PATH)/vintf/compatibility_matrix.xml
-DEVICE_MANIFEST_SKUS := ukee
-DEVICE_MANIFEST_UKEE_FILES := \
-    $(CONFIGS_PATH)/vintf/manifest_ukee.xml \
-    $(CONFIGS_PATH)/vintf/manifest_xiaomi.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(CONFIGS_PATH)/vintf/vendor_framework_compatibility_matrix.xml \
-    $(CONFIGS_PATH)/vintf/xiaomi_framework_compatibility_matrix.xml \
-    vendor/evolution/config/device_framework_matrix.xml
-ODM_MANIFEST_SKUS += marble
-ODM_MANIFEST_MARBLE_FILES := $(CONFIGS_PATH)/vintf/manifest_nfc.xml
 
 # Vibrator
 SOONG_CONFIG_NAMESPACES += XIAOMI_VIBRATOR
