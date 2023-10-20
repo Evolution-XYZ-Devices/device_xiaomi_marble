@@ -126,6 +126,9 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    GCamGOPrebuilt-V4
+
+PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
     camera.device@1.0-impl \
     libcamera2ndk_vendor \
