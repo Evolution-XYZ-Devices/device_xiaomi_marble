@@ -37,14 +37,21 @@ import org.lineageos.settings.thermal.ThermalUtils;
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "XiaomiParts";
+    private static final String TAG = "XiaomiParts-BCR";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (DEBUG) Log.d(TAG, "Received boot completed intent");
+        if (!intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
+            return;
+        }
+
+        Log.i(TAG, "Boot completed");
+
+        // Dirac
+        // DiracUtils.onBootCompleted(context);
 
         // Dolby Atmos
-        DolbyUtils.getInstance(context).onBootCompleted();
+        DolbyUtils.getInstance(context);
 
         DozeUtils.checkDozeService(context);
         RefreshUtils.initialize(context);
