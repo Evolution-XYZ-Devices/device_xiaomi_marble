@@ -22,6 +22,7 @@ import org.lineageos.settings.display.ColorService;
 import org.lineageos.settings.doze.AodBrightnessService;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.doze.PocketService;
+import org.lineageos.settings.gestures.GestureUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
 
@@ -69,5 +70,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         SurfaceControl.overrideHdrTypes(displayToken, new int[]{
                 HdrCapabilities.HDR_TYPE_DOLBY_VISION, HdrCapabilities.HDR_TYPE_HDR10,
                 HdrCapabilities.HDR_TYPE_HLG, HdrCapabilities.HDR_TYPE_HDR10_PLUS});
+
+        // Gesture: Double tap FPS
+        if (GestureUtils.isFpDoubleTapEnabled(context)) {
+            GestureUtils.setFingerprintNavigation(true);
+        }
     }
 }
