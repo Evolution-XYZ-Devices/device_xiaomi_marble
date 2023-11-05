@@ -1470,12 +1470,18 @@ vendor/lib64/vendor.qti.esepowermanager@1.0.so
 vendor/lib64/vendor.qti.esepowermanager@1.1.so
 
 # Fingerprint
-vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.default.so
-vendor/lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.default.so
+vendor/bin/hw/mfp-daemon
+vendor/etc/init/init.mfp-daemon.rc
+vendor/etc/vintf/manifest/AHBF@2.1-service.xml
+vendor/lib64/com.fingerprints.extension@3.0.so
+vendor/lib64/hw/fingerprint.fpc.so
+vendor/lib64/hw/fingerprint.goodix.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
+vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
+vendor/lib64/vendor.xiaomi.hw.touchfeature@1.0.so
 
 # FM
 vendor/etc/init.qti.fm.sh

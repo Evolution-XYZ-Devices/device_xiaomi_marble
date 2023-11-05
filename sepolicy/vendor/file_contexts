@@ -34,7 +34,7 @@
 /dev/goodix_fp                                                            u:object_r:vendor_fingerprint_device:s0
 /mnt/vendor/persist/fpc(/.*)?                                             u:object_r:vendor_fingerprint_data_file:s0
 /mnt/vendor/persist/goodix(/.*)?                                          u:object_r:vendor_fingerprint_data_file:s0
-/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/mfp-daemon                                                 u:object_r:hal_fingerprint_default_exec:s0
 
 # GNSS
 /data/vendor/ins(/.*)?                                                    u:object_r:vendor_ins_vendor_data_file:s0

@@ -33,6 +33,10 @@ allow hal_fingerprint_default {
   vendor_fingerprint_device
 }: chr_file rw_file_perms;
 
+allow hal_fingerprint_default self:capability sys_nice;
+
+allow hal_fingerprint_default hal_xiaomi_fingerprint_hwservice:hwservice_manager { add find };
+
 # Data
 allow hal_fingerprint_default vendor_fingerprint_data_file:dir rw_dir_perms;
 allow hal_fingerprint_default vendor_fingerprint_data_file:file create_file_perms;

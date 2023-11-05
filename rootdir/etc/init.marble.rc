@@ -83,3 +83,10 @@ on property:ro.boot.product.hardware.sku=marble
     enable nqnfc_2_0_hal_service
     enable secureelement-hal_1_2
     enable qti_esepowermanager_service_1_1
+
+service mfp-daemon /vendor/bin/hw/mfp-daemon
+    override
+    class late_start
+    user system
+    group system drmrpc diag input uhid
+    capabilities SYS_NICE
