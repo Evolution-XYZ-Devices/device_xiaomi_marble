@@ -412,6 +412,7 @@ PRODUCT_PACKAGES += \
     TelecommResCommon \
     TelephonyResCommon \
     TetheringResCommon \
+    UpdatesResOverlayMarble \
     WifiResMarble \
     WifiResTarget
 
