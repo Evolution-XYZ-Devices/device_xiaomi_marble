@@ -16,6 +16,7 @@ TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_SUPPORTS_QUICK_TAP := true
 
 # Inherit from marble device.
+TARGET_DISABLE_EPPE := true
 $(call inherit-product, device/xiaomi/marble/device.mk)
 
 ## Device identifier
