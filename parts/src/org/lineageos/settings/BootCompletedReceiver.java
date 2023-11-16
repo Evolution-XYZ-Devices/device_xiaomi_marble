@@ -34,7 +34,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
 
         // Thermal Profiles
-        ThermalUtils.startService(context);
+        // ThermalUtils.startService(context);
 
         // DisplayFeature
         ColorService.startService(context);

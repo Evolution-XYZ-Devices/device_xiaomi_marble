@@ -44,6 +44,7 @@
             android:authorities="org.lineageos.settings.device.summary">
         </provider>
 
+        <!--
         <service
             android:name=".thermal.ThermalService"
             android:exported="true"
@@ -68,7 +69,6 @@
                 android:value="1" />
         </activity>
 
-        <!--
         <activity
             android:name=".dolby.DolbyActivity"
             android:exported="true"
