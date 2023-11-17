@@ -10,4 +10,7 @@
     <!-- Battery Health -->
     <string name="config_batteryRemainingCapacityNode">/sys/class/power_supply/battery/charge_full</string>
     <string name="config_batteryDesignCapacityNode">/sys/class/power_supply/battery/charge_full_design</string>
+
+    <!-- Whether to enable Lineage Fast Charge Preference -->
+    <bool name="config_lineageFastChargeSupported">true</bool>
 </resources>
