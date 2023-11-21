@@ -1,0 +1,16 @@
+[
+   {
+     "repository": "Nabu-upsidedowncake/device_xiaomi_marble-kernel",
+     "target_path": "device/xiaomi/marble-kernel",
+     "remote": "github"
+   },
+   {
+     "repository": "vendor_xiaomi_marble",
+     "target_path": "vendor/xiaomi/marble"
+   },
+   {
+     "repository": "saikiran2001/proprietary_vendor_xiaomi_camera",
+     "target_path": "vendor/xiaomi/camera",
+     "remote": "gitlab"
+   }
+]
