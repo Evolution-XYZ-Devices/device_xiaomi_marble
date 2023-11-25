@@ -18,3 +18,5 @@ binder_call(system_app, hal_fingerprint_default)
 # zram
 allow system_app sysfs_zram:dir r_dir_perms;
 allow system_app sysfs_zram:file r_file_perms;
+allow system_app vendor_sysfs_touch:dir r_dir_perms;
+allow system_app vendor_sysfs_touch:file rw_file_perms;

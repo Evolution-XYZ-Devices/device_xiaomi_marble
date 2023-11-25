@@ -25,6 +25,7 @@ import org.lineageos.settings.doze.PocketService;
 import org.lineageos.settings.gestures.GestureUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
+import org.lineageos.settings.touch.HighTouchPollingService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
@@ -51,6 +52,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         AodBrightnessService.startService(context);
         PocketService.startService(context);
         NfcCameraService.startService(context);
+        HighTouchPollingService.startService(context);
 
         // Override HDR types to enable Dolby Vision
         final IBinder displayToken = SurfaceControl.getInternalDisplayToken();

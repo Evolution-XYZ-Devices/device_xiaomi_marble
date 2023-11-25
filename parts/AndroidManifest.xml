@@ -198,5 +198,10 @@
             android:permission="AodBrightnessService">
         </service>
 
+        <service
+            android:name=".touch.HighTouchPollingService"
+            android:permission="HighTouchPollingService">
+        </service>
+
     </application>
 </manifest>

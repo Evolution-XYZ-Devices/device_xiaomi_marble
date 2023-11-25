@@ -18,7 +18,11 @@ on boot
     chown radio radio /dev/smd8
     mkdir /data/vendor/modem 0777 radio radio
 
-    # Pocket sensor
+    # Touchscreen
+    chown system system /sys/devices/platform/goodix_ts.0/goodix_ts_double_tap
+    chmod 0660 /sys/devices/platform/goodix_ts.0/goodix_ts_double_tap
+    chown system system /sys/devices/platform/goodix_ts.0/goodix_ts_report_rate
+    chmod 0660 /sys/devices/platform/goodix_ts.0/goodix_ts_report_rate
     chown system system /sys/class/touch/touch_dev/palm_sensor
     chmod 0664 /sys/class/touch/touch_dev/palm_sensor
 
