@@ -1,8 +1,7 @@
 [
    {
-     "repository": "Nabu-upsidedowncake/device_xiaomi_marble-kernel",
-     "target_path": "device/xiaomi/marble-kernel",
-     "remote": "github"
+     "repository": "device_xiaomi_marble-kernel",
+     "target_path": "device/xiaomi/marble-kernel"
    },
    {
      "repository": "vendor_xiaomi_marble",
