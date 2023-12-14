@@ -11,5 +11,9 @@
      "repository": "saikiran2001/proprietary_vendor_xiaomi_camera",
      "target_path": "vendor/xiaomi/camera",
      "remote": "gitlab"
+   },
+   {
+     "repository": "packages_apps_ViPER4AndroidFX",
+     "target_path": "packages/apps/ViPER4AndroidFX"
    }
 ]

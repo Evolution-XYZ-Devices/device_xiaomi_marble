@@ -656,6 +656,9 @@ $(call inherit-product, hardware/xiaomi/aidl/vibrator/vibrator-vendor-product.mk
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-V1-ndk_platform.vendor
 
+# Viper
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
+
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v33/arm/arch-arm-armv7-a-neon/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefright_foundation-v33.so \
