@@ -91,6 +91,7 @@ function blob_fixup() {
         ;;
     vendor/lib64/mediadrm/libwvdrmengine.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
+        "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
         ;;
     vendor/lib64/libsnsapi.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
@@ -121,6 +122,7 @@ function blob_fixup() {
         ;;
     vendor/lib/mediadrm/libwvdrmengine.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
+        "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
         ;;
     vendor/lib/libsnsapi.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
@@ -163,6 +165,9 @@ function blob_fixup() {
         ;;
     vendor/bin/hw/android.hardware.gnss-aidl-service-qti)
         "${PATCHELF}" --replace-needed "android.hardware.gnss-V1-ndk_platform.so" "android.hardware.gnss-V1-ndk.so" "${2}"
+        ;;
+    vendor/lib64/libdlbdsservice.so | vendor/lib64/soundfx/libhwdap.so | vendor/lib64/libstagefright_soft_ac4dec.so | vendor/lib64/libstagefright_soft_ddpdec.so | system/lib64/libdovi_omx.so | vendor/lib/mediadrm/libwvdrmengine.so | vendor/lib64/c2.dolby.avc.dec.so | vendor/lib64/c2.dolby.avc.sec.dec.so | vendor/lib64/c2.dolby.egl.so | vendor/lib64/c2.dolby.hevc.dec.so | vendor/lib64/c2.dolby.hevc.enc.so | vendor/lib64/c2.dolby.hevc.sec.dec.so | vendor/lib64/hw/audio.primary.taro.so | vendor/lib64/hw/displayfeature.default.so | vendor/lib64/libdolbyvision.so | vendor/lib64/libmi-stc-HW-modulate.so | vendor/lib64/libmiBrightness.so | vendor/lib64/libqc2audio_hwaudiocodec.so | vendor/lib64/libstagefright_softomx.so | vendor/lib64/soundfx/libdlbvol.so | vendor/lib64/soundfx/libswspatializer.so | vendor/lib64/libcodec2_soft_ddpdec.so | vendor/lib64/libdlbpreg.so | vendor/lib64/libcodec2_soft_ac4dec.so)
+        "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
         ;;
     esac
 }
