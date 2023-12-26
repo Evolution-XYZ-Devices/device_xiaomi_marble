@@ -39,11 +39,6 @@
             </intent-filter>
         </receiver>
 
-        <provider
-            android:name=".SummaryProvider"
-            android:authorities="org.lineageos.settings.device.summary">
-        </provider>
-
         <service
             android:name=".thermal.ThermalService"
             android:exported="true"
@@ -68,74 +63,6 @@
                 android:value="1" />
         </activity>
 
-        <!--
-        <activity
-            android:name=".dolby.DolbyActivity"
-            android:exported="true"
-            android:label="@string/dolby_title">
-            <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.media.action.DISPLAY_AUDIO_EFFECT_CONTROL_PANEL" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.CATEGORY_CONTENT_MUSIC" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                       android:value="com.android.settings.category.ia.sound" />
-            <meta-data android:name="com.android.settings.summary_uri"
-                       android:value="content://org.lineageos.settings.device.summary/dolby" />
-        </activity>
-
-        <service
-            android:name=".dolby.DolbyTileService"
-            android:exported="true"
-            android:icon="@drawable/ic_dolby_qs"
-            android:label="@string/dolby_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-        -->
-
-        <service
-            android:name=".display.ColorService"
-            android:permission="ColorService">
-        </service>
-
-        <service
-            android:name=".camera.NfcCameraService"
-            android:permission="NfcCameraService">
-        </service>
-
-        <service
-            android:name=".doze.AodBrightnessService"
-            android:permission="AodBrightnessService">
-        </service>
-
-        <service
-            android:name=".doze.PocketService"
-            android:permission="PocketService">
-        </service>
-
-        <activity
-            android:name=".speaker.ClearSpeakerActivity" 
-            android:label="@string/clear_speaker_title"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.sound" />
-            <meta-data
-                android:name="com.android.settings.summary"
-                android:resource="@string/clear_speaker_summary" />
-        </activity>
-
-        <!--
         <activity
             android:name=".dirac.DiracActivity"
             android:label="@string/dirac_title"
@@ -177,12 +104,32 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        -->
+
+        <activity
+            android:name=".speaker.ClearSpeakerActivity" 
+            android:label="@string/clear_speaker_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.sound" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/clear_speaker_summary" />
+        </activity>
 
         <service
-            android:name=".refreshrate.RefreshService"
+            android:name=".display.ColorService"
             android:exported="true"
-            android:permission="RefreshService">
+            android:permission="ColorService">
+        </service>
+
+        <service
+            android:name=".camera.NfcCameraService"
+            android:exported="true"
+            android:permission="NfcCameraService">
         </service>
 
         <activity
@@ -209,6 +156,24 @@
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
+        </service>
+
+        <service
+            android:name=".refreshrate.RefreshService"
+            android:exported="true"
+            android:permission="RefreshService">
+        </service>
+
+        <service
+            android:name=".doze.PocketService"
+            android:exported="true"
+            android:permission="PocketService">
+        </service>
+
+        <service
+            android:name=".doze.AodBrightnessService"
+            android:exported="true"
+            android:permission="AodBrightnessService">
         </service>
 
     </application>
