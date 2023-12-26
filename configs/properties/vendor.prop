@@ -276,7 +276,6 @@ debug.sdm.support_writeback=0
 debug.sf.auto_latch_unsignaled=false
 debug.sf.disable_client_composition_cache=1
 debug.sf.disable_backpressure=1
-debug.sf.enable_gl_backpressure=1
 debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
