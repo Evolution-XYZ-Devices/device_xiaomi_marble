@@ -11,10 +11,11 @@ package org.lineageos.settings;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.display.DisplayManager;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.Display;
 import android.view.Display.HdrCapabilities;
-import android.view.SurfaceControl;
 
 import org.lineageos.settings.camera.NfcCameraService;
 import org.lineageos.settings.dirac.DiracUtils;
@@ -55,12 +56,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         NfcCameraService.startService(context);
         HighTouchPollingService.startService(context);
         TouchOrientationService.startService(context);
-
-        // Override HDR types to enable Dolby Vision
-        final IBinder displayToken = SurfaceControl.getInternalDisplayToken();
-        SurfaceControl.overrideHdrTypes(displayToken, new int[]{
-                HdrCapabilities.HDR_TYPE_DOLBY_VISION, HdrCapabilities.HDR_TYPE_HDR10,
-                HdrCapabilities.HDR_TYPE_HLG, HdrCapabilities.HDR_TYPE_HDR10_PLUS});
+        overrideHdrTypes(context);
     }
 
     private static void onBootCompleted(Context context) {
@@ -78,5 +74,13 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (GestureUtils.isFpDoubleTapEnabled(context)) {
             GestureUtils.setFingerprintNavigation(true);
         }
+    }
+
+    private static void overrideHdrTypes(Context context) {
+        // Override HDR types to enable Dolby Vision
+        final DisplayManager dm = context.getSystemService(DisplayManager.class);
+        dm.overrideHdrTypes(Display.DEFAULT_DISPLAY, new int[]{
+                HdrCapabilities.HDR_TYPE_DOLBY_VISION, HdrCapabilities.HDR_TYPE_HDR10,
+                HdrCapabilities.HDR_TYPE_HLG, HdrCapabilities.HDR_TYPE_HDR10_PLUS});
     }
 }
