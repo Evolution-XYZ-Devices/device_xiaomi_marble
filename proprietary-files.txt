@@ -1505,7 +1505,6 @@ vendor/bin/xtwifi-inet-agent
 vendor/etc/apdr.conf
 vendor/etc/batching.conf
 vendor/etc/cacert_location.pem
-vendor/etc/gps.conf
 vendor/etc/init/android.hardware.gnss-aidl-service-qti.rc
 vendor/etc/init/init.qdmastats.rc
 vendor/etc/init/loc-launcher.rc
