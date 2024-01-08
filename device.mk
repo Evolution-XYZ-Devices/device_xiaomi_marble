@@ -435,15 +435,15 @@ PRODUCT_PACKAGES += \
     WifiResTarget
 
 PRODUCT_PACKAGES += \
-    AospWifiResOverlayMarbleChina \
-    AospWifiResOverlayMarbleGlobal \
-    AospWifiResOverlayMarbleIndia \
-    SettingsOverlayGlobal \
-    SettingsOverlayIndia \
-    SettingsOverlayChina \
-    SettingsProviderOverlayGlobal \
-    SettingsProviderOverlayIndia \
-    SettingsProviderOverlayChina
+    MarbleCNSettingsOverlay \
+    MarbleCNSettingsProviderOverlay \
+    MarbleCNWifiOverlay \
+    MarbleGLSettingsOverlay \
+    MarbleGLSettingsProviderOverlay \
+    MarbleGLWifiOverlay \
+    MarbleINSettingsOverlay \
+    MarbleINSettingsProviderOverlay \
+    MarbleINWifiOverlay
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
