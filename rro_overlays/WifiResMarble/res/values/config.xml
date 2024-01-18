@@ -44,6 +44,9 @@
     <!-- Wifi driver supports IEEE80211AX single user beamformee for softap -->
     <bool translatable="false" name="config_wifiSoftapHeSuBeamformeeSupported">true</bool>
 
+    <!-- Indicates that connected MAC randomization is supported on this device -->
+    <bool translatable="false" name="config_wifi_connected_mac_randomization_supported">true</bool>
+
     <!-- Boolean indicating performing a partial initial scan is enabled -->
     <bool translatable="false" name="config_wifiEnablePartialInitialScan">true</bool>
 
