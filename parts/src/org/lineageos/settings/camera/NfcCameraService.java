@@ -27,7 +27,7 @@ public class NfcCameraService extends Service {
     private static final String FRONT_CAMERA_ID = "1";
 
     private static final Set<String> IGNORED_PACKAGES = Set.of(
-        "org.pixelexperience.faceunlock", // face unlock
+        "co.aospa.sense", // face unlock
         "com.google.android.as" // auto rotate, screen attention etc
     );
 
