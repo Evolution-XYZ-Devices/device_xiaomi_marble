@@ -22,10 +22,10 @@ vendor.xiaomi.hardware.mlipay::IMlipayService                u:object_r:hal_mlip
 vendor.xiaomi.hardware.mtdservice::IMTService                u:object_r:hal_mtdservice_hwservice:s0
 vendor.xiaomi.hardware.tidaservice::ITidaService             u:object_r:hal_tidaservice_hwservice:s0
 
-# Touchfeature
-vendor.xiaomi.hw.touchfeature::ITouchFeature                 u:object_r:hal_touchfeature_xiaomi_hwservice:s0
-
 # Sensors
 android.frameworks.sensorservice::ISensorManager             u:object_r:fwk_sensor_hwservice:s0
 vendor.xiaomi.sensor.citsensorservice::ICitSensorService     u:object_r:vendor_hal_citsensorservice_xiaomi_hwservice:s0
 vendor.xiaomi.sensor.communicate::ISensorCommunicate         u:object_r:vendor_hal_sensorcommunicate_hwservice:s0
+
+# Touchfeature
+vendor.xiaomi.hw.touchfeature::ITouchFeature                 u:object_r:hal_touchfeature_xiaomi_hwservice:s0

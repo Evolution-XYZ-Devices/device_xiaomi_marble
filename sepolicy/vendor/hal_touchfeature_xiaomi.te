@@ -1,5 +1,4 @@
 type hal_touchfeature_xiaomi_hwservice, hwservice_manager_type, protected_hwservice;
-type vendor_touchfeature_device, dev_type;
 
 type hal_touchfeature_xiaomi_default, domain;
 hal_server_domain(hal_touchfeature_xiaomi_default, hal_touchfeature_xiaomi)

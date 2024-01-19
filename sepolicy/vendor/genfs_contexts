@@ -1,5 +1,5 @@
 # Battery
-genfscon sysfs /class/qcom-battery u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /class/qcom-battery                                                  u:object_r:vendor_sysfs_battery_supply:s0
 
 # Extcon
 genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon u:object_r:sysfs_extcon:s0
@@ -16,22 +16,22 @@ genfscon sysfs /class/drm/card0/sde-crtc-0/measured_fps    u:object_r:vendor_sys
 # Fingerprint
 genfscon sysfs /devices/platform/soc/soc:fpc1020 u:object_r:vendor_sysfs_fingerprint:s0
 genfscon sysfs /devices/platform/soc/soc:goodix_fp u:object_r:vendor_sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc u:object_r:vendor_sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc                            u:object_r:vendor_sysfs_fingerprint:s0
 genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix u:object_r:vendor_sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:xiaomi_fingerprint/fingerdown  u:object_r:vendor_sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:xiaomi_fingerprint/fingerdown              u:object_r:vendor_sysfs_fingerprint:s0
 
-# Sensor
-genfscon sysfs /sys/class/touch/touch_dev/palm_sensor u:object_r:vendor_sysfs_palm_sensor:s0
+# Sensors
+genfscon sysfs /devices/virtual/touch/touch_dev/palm_sensor                         u:object_r:vendor_sysfs_sensors:s0
 
 # Touchscreen
 genfscon sysfs /devices/platform/goodix_ts.0                                        u:object_r:vendor_sysfs_touch:s0
 
 # Wakeup nodes
-genfscon sysfs /devices/platform/goodix_ts.0/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/990000.spi/spi_master/spi0/spi0.0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/goodix_ts.0/wakeup                                 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/990000.spi/spi_master/spi0/spi0.0/wakeup       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8350@0:pon_hlos@1300/c42d000.qcom,spmi:qcom,pmk8350@0:pon_hlos@1300:pwrkey-bark/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8350@0:pon_hlos@1300/c42d000.qcom,spmi:qcom,pmk8350@0:pon_hlos@1300:pwrkey-resin-bark/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/wakeup                     u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix/wakeup                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:fpc1020/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup u:object_r:sysfs_wakeup:s0

@@ -42,7 +42,7 @@
 /mnt/vendor/persist/qxwz                                                  u:object_r:qx_oss_vendor_data_file:s0
 
 # Health
-/vendor/bin/hw/android\.hardware\.health-service\.xiaomi                  u:object_r:hal_health_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.health-service\.xiaomi               u:object_r:hal_health_default_exec:s0
 
 # FPS info
 /sys/class/drm/card0/sde-crtc-0/measured_fps                         u:object_r:vendor_sysfs_graphics:s0
@@ -96,7 +96,7 @@
 /vendor/bin/hw/vendor\.xiaomi\.sensor\.citsensorservice@1\.1-service      u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
 /vendor/bin/hw/vendor\.xiaomi\.sensor\.citsensorservice@2\.0-service      u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
 /vendor/bin/hw/android\.hardware\.sensors@2.1-service\.xiaomi-multihal    u:object_r:hal_sensors_default_exec:s0
-/vendor/bin/hw/vendor.xiaomi.sensor.communicate@1.0-service               u:object_r:vendor_hal_sensorcommunicate_default_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.sensor\.communicate@1\.0-service           u:object_r:vendor_hal_sensorcommunicate_default_exec:s0
 
 # SLA
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.sla\.service\@1\.0-service    u:object_r:hal_slaservice_qti_exec:s0
@@ -115,7 +115,7 @@
 /sys/devices/virtual/thermal/thermal_message/flash_state                  u:object_r:sys_thermal_flash_state:s0
 /sys/devices/virtual/thermal/thermal_message/wifi_limit                   u:object_r:sys_thermal_wifi_limit:s0
 
-# Touchfeature
+# Touch
 /vendor/bin/hw/vendor\.xiaomi\.hw\.touchfeature@1\.0-service              u:object_r:hal_touchfeature_xiaomi_default_exec:s0
 /dev/xiaomi-touch                                                         u:object_r:vendor_touchfeature_device:s0
 
