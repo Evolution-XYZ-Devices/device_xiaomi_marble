@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.dirac;
+package org.lineageos.settings.dolby;
 
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.widget.R;
 
-public class DiracActivity extends CollapsingToolbarBaseActivity {
+public class DolbyActivity extends CollapsingToolbarBaseActivity {
 
-    private static final String TAG_DIRAC = "dirac";
+    private static final String TAG_DOLBY = "dolby";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,
-                new DiracSettingsFragment(), TAG_DIRAC).commit();
+        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+                new DolbySettingsFragment(), TAG_DOLBY).commit();
     }
 }

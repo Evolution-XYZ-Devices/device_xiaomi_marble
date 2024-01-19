@@ -1,5 +1,5 @@
 # Audio
-ro.audio.spatializer_enabled=true
+ro.audio.spatializer_enabled=false
 
 # Qti
 ro.vendor.qti.va_odm.support=1

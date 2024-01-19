@@ -18,8 +18,8 @@ import android.view.Display;
 import android.view.Display.HdrCapabilities;
 
 import org.lineageos.settings.camera.NfcCameraService;
-import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.display.ColorService;
+import org.lineageos.settings.dolby.DolbyUtils;
 import org.lineageos.settings.doze.AodBrightnessService;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.doze.PocketService;
@@ -61,11 +61,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static void onBootCompleted(Context context) {
         // Data is now accessible (user has just unlocked).
-        try {
-            DiracUtils.getInstance(context);
-        } catch (Exception e) {
-            Log.d(TAG, "Dirac is not present in system");
-        }
+        DolbyUtils.getInstance(context);
         DozeUtils.checkDozeService(context);
         RefreshUtils.initialize(context);
         ThermalUtils.startService(context);

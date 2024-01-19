@@ -1,23 +1,20 @@
-package org.lineageos.settings.dirac;
+package org.lineageos.settings.dolby;
 
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
-public class DiracTileService extends TileService {
-
-    private DiracUtils mDiracUtils;
+public class DolbyTileService extends TileService {
 
     @Override
     public void onStartListening() {
-        mDiracUtils = DiracUtils.getInstance(getApplicationContext());
-
         Tile tile = getQsTile();
-        if (mDiracUtils.isDiracEnabled()) {
+        DolbyUtils dolbyUtils = DolbyUtils.getInstance(getApplicationContext());
+        if (dolbyUtils.getDsOn()) {
             tile.setState(Tile.STATE_ACTIVE);
         } else {
             tile.setState(Tile.STATE_INACTIVE);
         }
-
+        tile.setSubtitle(dolbyUtils.getProfileName());
         tile.updateTile();
         super.onStartListening();
     }
@@ -25,11 +22,12 @@ public class DiracTileService extends TileService {
     @Override
     public void onClick() {
         Tile tile = getQsTile();
-        if (mDiracUtils.isDiracEnabled()) {
-            mDiracUtils.setEnabled(false);
+        DolbyUtils dolbyUtils = DolbyUtils.getInstance(getApplicationContext());
+        if (dolbyUtils.getDsOn()) {
+            dolbyUtils.setDsOn(false);
             tile.setState(Tile.STATE_INACTIVE);
         } else {
-            mDiracUtils.setEnabled(true);
+            dolbyUtils.setDsOn(true);
             tile.setState(Tile.STATE_ACTIVE);
         }
         tile.updateTile();

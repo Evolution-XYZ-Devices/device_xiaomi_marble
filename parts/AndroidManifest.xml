@@ -43,60 +43,34 @@
             </intent-filter>
         </receiver>
 
-        <service
-            android:name=".thermal.ThermalService"
-            android:exported="true"
-            android:permission="ThermalService">
-        </service>
-
         <activity
-            android:name=".thermal.ThermalSettingsActivity"
-            android:label="@string/thermal_title"
+            android:name=".dolby.DolbyActivity"
+            android:label="@string/dolby_title"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
             </intent-filter>
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.battery" />
-            <meta-data
-                android:name="com.android.settings.summary"
-                android:resource="@string/thermal_summary" />
-            <meta-data
-                android:name="com.android.settings.order"
-                android:value="1" />
-        </activity>
-
-        <activity
-            android:name=".dirac.DiracActivity"
-            android:label="@string/dirac_title"
-            android:exported="true">
             <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <action android:name="android.media.action.DISPLAY_AUDIO_EFFECT_CONTROL_PANEL" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.CATEGORY_CONTENT_MUSIC" />
             </intent-filter>
-            <meta-data 
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.sound" />
-            <meta-data
-                android:name="com.android.settings.summary"
-                android:resource="@string/dirac_summary" />
+            <meta-data android:name="com.android.settings.category"
+                       android:value="com.android.settings.category.ia.sound" />
+            <meta-data android:name="com.android.settings.summary_uri"
+                       android:value="content://org.lineageos.settings.device.summary/dolby" />
         </activity>
 
         <service
-            android:name=".dirac.DiracTileService"
-            android:icon="@drawable/ic_qs_dirac"
-            android:label="@string/dirac_title"
-            android:exported="true"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:name=".dolby.DolbyTileService"
+            android:icon="@drawable/ic_dolby_qs"
+            android:label="@string/dolby_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
-        </service>
-
-        <service
-            android:name=".doze.DozeService"
-            android:exported="true"
-            android:permission="DozeService">
         </service>
 
         <activity
@@ -125,6 +99,25 @@
         </activity>
 
         <activity
+            android:name=".thermal.ThermalSettingsActivity"
+            android:label="@string/thermal_title"
+            android:icon="@drawable/ic_thermal_settings"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/thermal_summary" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="1" />
+        </activity>
+
+        <activity
             android:name=".gestures.FpDoubleTapActivity"
             android:label="@string/fp_double_tap_title"
             android:exported="true">
@@ -136,23 +129,6 @@
             <meta-data android:name="com.android.settings.summary_uri"
                        android:value="content://org.lineageos.settings.device.summary/fp_double_tap" />
         </activity>
-
-        <provider
-            android:name=".SummaryProvider"
-            android:authorities="org.lineageos.settings.device.summary">
-        </provider>
-
-        <service
-            android:name=".display.ColorService"
-            android:exported="true"
-            android:permission="ColorService">
-        </service>
-
-        <service
-            android:name=".camera.NfcCameraService"
-            android:exported="true"
-            android:permission="NfcCameraService">
-        </service>
 
         <activity
             android:name=".refreshrate.RefreshActivity"
@@ -173,17 +149,28 @@
             android:name=".refreshrate.RefreshTileService"
             android:icon="@drawable/ic_qs_refresh_rate"
             android:label="@string/refresh_title"
-            android:exported="true"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
 
+        <provider
+            android:name=".SummaryProvider"
+            android:authorities="org.lineageos.settings.device.summary">
+        </provider>
+
         <service
-            android:name=".refreshrate.RefreshService"
+            android:name=".thermal.ThermalService"
             android:exported="true"
-            android:permission="RefreshService">
+            android:permission="ThermalService">
+        </service>
+
+        <service
+            android:name=".doze.DozeService"
+            android:exported="true"
+            android:permission="DozeService">
         </service>
 
         <service
@@ -193,9 +180,27 @@
         </service>
 
         <service
+            android:name=".display.ColorService"
+            android:exported="true"
+            android:permission="ColorService">
+        </service>
+
+        <service
+            android:name=".camera.NfcCameraService"
+            android:exported="true"
+            android:permission="NfcCameraService">
+        </service>
+
+        <service
             android:name=".doze.AodBrightnessService"
             android:exported="true"
             android:permission="AodBrightnessService">
+        </service>
+
+        <service
+            android:name=".refreshrate.RefreshService"
+            android:exported="true"
+            android:permission="RefreshService">
         </service>
 
         <service
