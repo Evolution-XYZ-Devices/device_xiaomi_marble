@@ -1,3 +1,8 @@
+# Copyright (C) 2021 The Android Open Source Project
+#           (C) 2022-2023 Paranoid Android
+#
+# SPDX-License-Identifier: Apache-2.0
+
 on early-boot
     # SSR Setup
     write /sys/class/remoteproc/remoteproc0/recovery enabled
@@ -6,13 +11,6 @@ on early-boot
     write /sys/class/remoteproc/remoteproc3/recovery enabled
 
 on boot
-    # citsensorservice
-    start citsensor-hal-2-0
-
-    # DT2W
-    chown system system /sys/devices/platform/goodix_ts.0/goodix_ts_double_tap
-    chmod 0660 /sys/devices/platform/goodix_ts.0/goodix_ts_double_tap
-
     # Modem
     chmod 0777 /dev/smd8
     chown radio radio /dev/smd8
@@ -25,6 +23,12 @@ on boot
     chmod 0660 /sys/devices/platform/goodix_ts.0/goodix_ts_report_rate
     chown system system /sys/class/touch/touch_dev/palm_sensor
     chmod 0664 /sys/class/touch/touch_dev/palm_sensor
+
+    # Fingerprint
+    chmod 0666 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+    chmod 0664 /sys/bus/platform/devices/soc:xiaomi_fingerprint/fingerdown
+    chown system graphics /sys/bus/platform/devices/soc:xiaomi_fingerprint/fingerdown
 
 on post-fs
     chown system system /sys/class/backlight/panel0-backlight/brightness
@@ -49,13 +53,6 @@ on post-fs-data
 
     # qrtr-lookup
     mkdir /data/vendor/qrtr 0775 system system
-
-service citsensor-hal-2-0 /vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
-    class late_start
-    user system
-    group system input wakelock
-    override
-    task_profiles ServiceCapacityLow
 
 service nqnfc_2_0_hal_service /vendor/bin/hw/vendor.nxp.hardware.nfc@2.0-service
     class early_hal
@@ -83,6 +80,20 @@ on property:ro.boot.product.hardware.sku=marble
     enable nqnfc_2_0_hal_service
     enable secureelement-hal_1_2
     enable qti_esepowermanager_service_1_1
+
+service citsensor-hal-2-0 /vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
+    class late_start
+    user system
+    group system input
+    override
+    task_profiles ServiceCapacityLow
+
+service ssgqmigd /vendor/bin/ssgqmigd64
+    override
+    class late_start
+    user radio
+    group radio gps system
+    socket ssgqmig seqpacket 0660 radio inet
 
 service mfp-daemon /vendor/bin/hw/mfp-daemon
     override
