@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 The LineageOS Project
-     SPDX-License-Identifier: Apache-2.0
+     Copyright (C) 2021 Paranoid Android
+               (C) 2021 The Linux Foundation. All rights reserved.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <!-- Wifi driver supports beacon protection for softap -->
     <bool translatable="false" name="config_vendor_softap_beacon_protection_supported">true</bool>
@@ -43,9 +55,6 @@
 
     <!-- Wifi driver supports IEEE80211AX single user beamformee for softap -->
     <bool translatable="false" name="config_wifiSoftapHeSuBeamformeeSupported">true</bool>
-
-    <!-- Indicates that connected MAC randomization is supported on this device -->
-    <bool translatable="false" name="config_wifi_connected_mac_randomization_supported">true</bool>
 
     <!-- Boolean indicating performing a partial initial scan is enabled -->
     <bool translatable="false" name="config_wifiEnablePartialInitialScan">true</bool>
@@ -88,4 +97,33 @@
     <!-- Enable Make-Before-Break Wifi network switching.
          Note: this is conditional on the device supporting dual concurrent STAs. -->
     <bool translatable="false" name="config_wifiMultiStaNetworkSwitchingMakeBeforeBreakEnabled">true</bool>
+
+    <!-- Controls whether a wifi connection with RSSI lower than the sufficient RSSI will be
+    temporarily disabled when it is unwanted by core networking -->
+    <bool translatable="false" name="config_wifiDisableUnwantedNetworkOnLowRssi">true</bool>
+
+    <!-- Whether we should apply APF filters on non primary STA connections when STA + STA is active.
+         Defaults to false since most wifi chips cannot support concurrent APF filter set needed for STA + STA-->
+    <bool translatable="false" name="config_wifiEnableApfOnNonPrimarySta">true</bool>
+
+    <!-- Boolean indicating that enable roaming between linked networks -->
+    <bool translatable="false" name="config_wifiEnableLinkedNetworkRoaming">false</bool>
+
+    <!-- Boolean indicating whether IP address allocation in EAPOL is enabled by default in Wi-Fi.
+         The GO fixed IP address is set to 192.168.49.1 and subnet mask to 255.255.255.0 -->
+    <bool translatable="false" name ="config_wifiP2pGoIpAddressAllocationInEapolFrames">true</bool>
+
+    <!-- Use legacy wifi p2p dedicated address instead of randomize address. -->
+    <bool translatable="false" name="config_tether_enable_legacy_wifi_p2p_dedicated_ip">true</bool>
+
+    <!-- List of constants to indicate how many failures are needed to temporarily disable a network
+    from auto-connect -->
+    <integer translatable="false" name="config_wifiDisableReasonAssociationRejectionThreshold"> 5 </integer>
+    <integer translatable="false" name="config_wifiDisableReasonAuthenticationFailureThreshold"> 5 </integer>
+
+    <!-- Interval Multiplier for PNO scan. After not finding any networks for
+         config_wifiPnoScanIterations, PNO will multiply the scan interval by the value
+         configured.-->
+    <integer translatable="false" name="config_wifiPnoScanIntervalMultiplier">6</integer>
+
 </resources>
