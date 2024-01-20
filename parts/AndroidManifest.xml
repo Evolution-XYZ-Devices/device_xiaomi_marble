@@ -50,7 +50,7 @@
         </service>
 
         <activity
-            android:name=".thermal.ThermalActivity"
+            android:name=".thermal.ThermalSettingsActivity"
             android:label="@string/thermal_title"
             android:exported="true">
             <intent-filter>

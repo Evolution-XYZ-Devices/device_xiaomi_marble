@@ -25,14 +25,14 @@ import android.widget.Switch;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.settingslib.widget.MainSwitchPreference;
 import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import org.lineageos.settings.R;
 
-public class FpDoubleTapFragment extends PreferenceFragment implements
+public class FpDoubleTapFragment extends PreferenceFragmentCompat implements
         OnPreferenceChangeListener, OnMainSwitchChangeListener {
 
     private static final String TAG = "FpDoubleTapFragment";
