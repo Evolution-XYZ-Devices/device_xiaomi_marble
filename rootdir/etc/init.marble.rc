@@ -1,7 +1,9 @@
+#
 # Copyright (C) 2021 The Android Open Source Project
 #           (C) 2022-2023 Paranoid Android
 #
 # SPDX-License-Identifier: Apache-2.0
+#
 
 on early-boot
     # SSR Setup
@@ -29,6 +31,10 @@ on boot
     chown system system /dev/goodix_fp
     chmod 0664 /sys/bus/platform/devices/soc:xiaomi_fingerprint/fingerdown
     chown system graphics /sys/bus/platform/devices/soc:xiaomi_fingerprint/fingerdown
+
+    # Charging
+    chown system system /sys/class/qcom-battery/input_suspend
+    chmod 0660 /sys/class/qcom-battery/input_suspend
 
 on post-fs
     chown system system /sys/class/backlight/panel0-backlight/brightness
