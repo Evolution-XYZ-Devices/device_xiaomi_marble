@@ -35,4 +35,7 @@
     <!-- Maximum number of notification icons shown in the status bar (excluding overflow dot) -->
     <integer name="max_notif_static_icons">5</integer>
 
+    <!-- Whether long press is required to activate keyguard quick affordance buttons -->
+    <bool name="config_keyguardQuickAffordanceRequiresLongPress">false</bool>
+
 </resources>
