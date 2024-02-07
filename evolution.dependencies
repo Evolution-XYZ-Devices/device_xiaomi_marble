@@ -8,9 +8,9 @@
      "target_path": "vendor/xiaomi/marble"
    },
    {
-     "repository": "saikiran2001/proprietary_vendor_xiaomi_camera",
+     "repository": "evo-x/vendor_xiaomi_camera",
      "target_path": "vendor/xiaomi/camera",
-     "remote": "gitlab"
+     "remote": "bb"
    },
    {
      "repository": "packages_apps_ViPER4AndroidFX",
