@@ -120,7 +120,8 @@ BOARD_KERNEL_CMDLINE := \
     disable_dma32=on \
     kpti=off \
     swinfo.fingerprint=$(EVO_VERSION) \
-    mtdoops.fingerprint=$(EVO_VERSION)
+    mtdoops.fingerprint=$(EVO_VERSION) \
+    allow_file_spec_access
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
