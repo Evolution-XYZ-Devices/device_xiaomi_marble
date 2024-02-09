@@ -15,6 +15,9 @@ vendor.xiaomi.hardware.fx.tunnel::IMiFxTunnel                u:object_r:hal_xiao
 com.fingerprints.extension::IFingerprintNavigation           u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
 com.fingerprints.extension::IFingerprintSensorTest           u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
 
+# Ims
+vendor.qti.ims.factory::IImsFactory                          u:object_r:vendor_hal_imsfactory_hwservice:s0
+
 # Mlipay
 vendor.qti.sla.service::ISlaService                          u:object_r:hal_slaservice_hwservice:s0
 vendor.xiaomi.hardware.mfidoca::IFidoService                 u:object_r:hal_mfidoca_hwservice:s0

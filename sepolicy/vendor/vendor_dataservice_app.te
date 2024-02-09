@@ -1,0 +1,2 @@
+dontaudit vendor_dataservice_app vendor_hal_factory_aidlservice:service_manager { find };
+dontaudit vendor_dataservice_app default_android_service:service_manager { find };
