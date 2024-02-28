@@ -4,8 +4,9 @@
      "target_path": "device/xiaomi/marble-kernel"
    },
    {
-     "repository": "vendor_xiaomi_marble",
-     "target_path": "vendor/xiaomi/marble"
+     "repository": "evo-x/vendor_xiaomi_marble",
+     "target_path": "vendor/xiaomi/marble",
+     "remote": "bb"
    },
    {
      "repository": "evo-x/vendor_xiaomi_camera",
