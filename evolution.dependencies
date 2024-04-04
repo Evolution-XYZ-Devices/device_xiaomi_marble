@@ -1,7 +1,8 @@
 [
    {
-     "repository": "device_xiaomi_marble-kernel",
-     "target_path": "device/xiaomi/marble-kernel"
+     "repository": "AnilShebin/device_xiaomi_marble-kernel",
+     "target_path": "device/xiaomi/marble-kernel",
+     "branch": "14.0"
    },
    {
      "repository": "evo-x/vendor_xiaomi_marble",
