@@ -1,0 +1,45 @@
+[
+  {
+    "repository": "device_xiaomi_sm8450-common",
+    "target_path": "device/xiaomi/sm8450-common"
+  },
+  {
+    "repository": "vendor_xiaomi_sm8450-common",
+    "target_path": "vendor/xiaomi/sm8450-common"
+  },
+  {
+    "repository": "vendor_xiaomi_marble",
+    "target_path": "vendor/xiaomi/marble"
+  },
+  {
+    "repository": "aosp-xiaomi/android_device_xiaomi_miuicamera-marble",
+    "target_path": "device/xiaomi/miuicamera-marble",
+    "branch": "lineage-21"
+  },
+  {
+    "repository": "Chaitanyakm/vendor_xiaomi_miuicamera-marble",
+    "target_path": "vendor/xiaomi/miuicamera-marble",
+    "remote": "gitlab",
+    "branch": "fourteen"
+  },
+  {
+    "repository": "cupid-development/android_kernel_xiaomi_sm8450",
+    "target_path": "kernel/xiaomi/sm8450",
+    "branch": "lineage-21"
+  },
+  {
+    "repository": "cupid-development/android_kernel_xiaomi_sm8450-devicetrees",
+    "target_path": "kernel/xiaomi/sm8450-devicetrees",
+    "branch": "lineage-21"
+  },
+  {
+    "repository": "cupid-development/android_kernel_xiaomi_sm8450-modules",
+    "target_path": "kernel/xiaomi/sm8450-modules",
+    "branch": "lineage-21"
+  },
+  {
+    "repository": "AOSPA/android_device_xiaomi_sepolicy",
+    "target_path": "device/xiaomi/sepolicy",
+    "branch": "uvite"
+  }
+]
