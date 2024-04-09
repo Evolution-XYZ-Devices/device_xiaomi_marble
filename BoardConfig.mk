@@ -15,6 +15,10 @@ include vendor/xiaomi/marble/BoardConfigVendor.mk
 
 DEVICE_PATH := device/xiaomi/marble
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_marble
+TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_marble
+
 # Kernel modules
 BOOT_KERNEL_MODULES += \
     qcom_pm8008-regulator.ko \
